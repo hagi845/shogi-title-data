@@ -1,0 +1,556 @@
+{
+  "dataVersion": 10,
+  "updatedAt": "2026-07-20",
+  "yearLabel": "2026年度",
+  "titles": [
+    {
+      "id": "ryuo",
+      "name": "竜王",
+      "seriesName": "竜王戦",
+      "rank": 1,
+      "term": 39,
+      "bestOf": 7,
+      "holder": "藤井聡太",
+      "holderTerms": 5,
+      "challenger": null,
+      "status": "upcoming",
+      "sponsor": "読売新聞社",
+      "broadcast": "ABEMA・囲碁将棋プラスで中継予定",
+      "note": "挑戦者決定トーナメント進行中(挑戦者は8月下旬~9月決定予定)。七番勝負は10月9日開幕、全7局の日程・会場が発表済み",
+      "holderWins": 0,
+      "challengerWins": 0,
+      "games": [
+        {
+          "game": 1,
+          "start": "2026-10-09",
+          "days": 2,
+          "venue": "セルリアンタワー能楽堂",
+          "city": "東京都渋谷区",
+          "result": null
+        },
+        {
+          "game": 2,
+          "start": "2026-10-22",
+          "days": 2,
+          "venue": "三嶋大社",
+          "city": "静岡県三島市",
+          "result": null
+        },
+        {
+          "game": 3,
+          "start": "2026-11-03",
+          "days": 2,
+          "venue": "総本山仁和寺",
+          "city": "京都府京都市",
+          "result": null
+        },
+        {
+          "game": 4,
+          "start": "2026-11-20",
+          "days": 2,
+          "venue": "霧島創業記念館 吉助",
+          "city": "宮崎県都城市",
+          "result": null
+        },
+        {
+          "game": 5,
+          "start": "2026-12-02",
+          "days": 2,
+          "venue": "増上寺",
+          "city": "東京都港区",
+          "result": null
+        },
+        {
+          "game": 6,
+          "start": "2026-12-09",
+          "days": 2,
+          "venue": "指宿白水館",
+          "city": "鹿児島県指宿市",
+          "result": null
+        },
+        {
+          "game": 7,
+          "start": "2026-12-16",
+          "days": 2,
+          "venue": "常磐ホテル",
+          "city": "山梨県甲府市",
+          "result": null
+        }
+      ]
+    },
+    {
+      "id": "meijin",
+      "name": "名人",
+      "seriesName": "名人戦",
+      "rank": 2,
+      "term": 84,
+      "bestOf": 7,
+      "holder": "藤井聡太",
+      "holderTerms": 4,
+      "challenger": "糸谷哲郎",
+      "status": "finished",
+      "sponsor": "朝日新聞社・毎日新聞社",
+      "broadcast": "ABEMA・囲碁将棋プラスで中継",
+      "note": "藤井名人が4-0で防衛(4連覇)",
+      "holderWins": 4,
+      "challengerWins": 0,
+      "games": [
+        {
+          "game": 1,
+          "start": "2026-04-08",
+          "days": 2,
+          "venue": "ホテル椿山荘東京",
+          "city": "東京都文京区",
+          "result": "holder",
+          "moves": 136,
+          "opening": "横歩取り",
+          "summary": "先手・糸谷の横歩取りで開幕。1日目は両者が長考を重ねるスローペースとなったが、後手の藤井が中盤以降にリードを広げ、136手で先勝した。"
+        },
+        {
+          "game": 2,
+          "start": "2026-04-25",
+          "days": 2,
+          "venue": "ホテル青森",
+          "city": "青森県青森市",
+          "result": "holder",
+          "moves": 89,
+          "opening": "相居飛車力戦",
+          "summary": "藤井の先手で前例の少ない力戦模様に。2日目に入ると藤井が着実にリードを築き、89手の短手数で快勝して開幕2連勝とした。"
+        },
+        {
+          "game": 3,
+          "start": "2026-05-07",
+          "days": 2,
+          "venue": "和倉温泉 日本の宿 のと楽",
+          "city": "石川県七尾市",
+          "result": "holder",
+          "moves": 130,
+          "opening": "雁木",
+          "summary": "両者が雁木に構える相雁木から前例のない力戦に。長く互角のねじり合いが続いたが、終盤に藤井が抜け出して130手で制し、防衛に王手をかけた。"
+        },
+        {
+          "game": 4,
+          "start": "2026-05-16",
+          "days": 2,
+          "venue": "高槻城公園芸術文化劇場",
+          "city": "大阪府高槻市",
+          "result": "holder",
+          "moves": 123,
+          "opening": "相居飛車力戦",
+          "summary": "先手藤井の雁木対後手糸谷の矢倉から1日目早々に力戦へ。2日目に藤井が歩の突き捨てから攻めに踏み込み123手で勝利。無傷の4連勝で名人4連覇を決めた。"
+        }
+      ]
+    },
+    {
+      "id": "eio",
+      "name": "叡王",
+      "seriesName": "叡王戦",
+      "rank": 3,
+      "term": 11,
+      "bestOf": 5,
+      "holder": "伊藤匠",
+      "holderTerms": 3,
+      "challenger": "斎藤慎太郎",
+      "status": "finished",
+      "sponsor": "不二家",
+      "broadcast": "ABEMAで中継",
+      "note": "伊藤叡王が3-2で防衛(3連覇)",
+      "holderWins": 3,
+      "challengerWins": 2,
+      "games": [
+        {
+          "game": 1,
+          "start": "2026-04-03",
+          "days": 1,
+          "venue": "シンガポール日本人会",
+          "city": "シンガポール",
+          "result": "holder",
+          "moves": 125,
+          "opening": "相掛かり",
+          "meals": [
+            {
+              "label": "昼食",
+              "holder": "チキンライス、アイスティー",
+              "challenger": "チキンライス、アイスティー"
+            },
+            {
+              "label": "おやつ",
+              "holder": "チーズタルト、フレッシュオレンジジュース",
+              "challenger": "チーズタルト、ミルキーカステラ、マンゴージュース"
+            }
+          ],
+          "sourceURL": "https://kifulog.shogi.or.jp/eiou/2026/04/post-97d2.html",
+          "summary": "前期フルセットの両者による再戦は、伊藤の先手で得意の相掛かりに。海外シンガポールでの開幕局は大激戦となり、伊藤が125手で制して先勝した。",
+          "kifuURL": "http://live.shogi.or.jp/eiou/kifu/11/eiou202604030101.html"
+        },
+        {
+          "game": 2,
+          "start": "2026-04-18",
+          "days": 1,
+          "venue": "アパリゾート佳水郷",
+          "city": "石川県加賀市",
+          "result": "holder",
+          "moves": 126,
+          "opening": "矢倉",
+          "meals": [
+            {
+              "label": "昼食",
+              "holder": "アパ社長カレースペシャル、緑茶(冷)",
+              "challenger": "鰤大根と加賀黒米うどん(温)・ミニアパ社長カレーロールカツ春野菜添え、加賀棒茶(冷)"
+            },
+            {
+              "label": "午後のおやつ",
+              "holder": "プレミアムチョコ生ケーキ、アイスストレートティー",
+              "challenger": "サンリオキャラクターズ キラキラフルーツババロアケーキ、柚子サイダー「柚子乙女」"
+            }
+          ],
+          "sourceURL": "https://kifulog.shogi.or.jp/eiou/2026/04/post-bc24.html",
+          "summary": "先手斎藤の矢倉に対し、伊藤は中住まいの陣形で対抗。長く均衡が続いたが終盤に伊藤が抜け出し、126手で勝って2連勝。防衛に王手をかけた。",
+          "kifuURL": "http://live.shogi.or.jp/eiou/kifu/11/eiou202604180101.html"
+        },
+        {
+          "game": 3,
+          "start": "2026-05-03",
+          "days": 1,
+          "venue": "料亭 か茂免",
+          "city": "愛知県名古屋市",
+          "result": "challenger",
+          "moves": 116,
+          "opening": "四間飛車",
+          "meals": [
+            {
+              "label": "昼食",
+              "holder": "か茂免名物御膳、冷やし緑茶",
+              "challenger": "か茂免名物御膳、冷やし緑茶"
+            },
+            {
+              "label": "午後のおやつ",
+              "holder": "かぶとケーキ、冷たい緑茶",
+              "challenger": "掘って楽しい♪ペコちゃんキャラパキ発掘恐竜パフェ、みかんジュース"
+            }
+          ],
+          "sourceURL": "https://kifulog.shogi.or.jp/eiou/2026/05/post-bc24.html",
+          "summary": "居飛車党の斎藤が意表の四間飛車を採用。互角のまま両者1分将棋に突入する激戦となり、最終盤の逆転で斎藤が116手で勝利しカド番をしのいだ。",
+          "kifuURL": "http://live.shogi.or.jp/eiou/kifu/11/eiou202605030101.html"
+        },
+        {
+          "game": 4,
+          "start": "2026-05-23",
+          "days": 1,
+          "venue": "犬鳴山温泉 み奈美亭",
+          "city": "大阪府泉佐野市",
+          "result": "challenger",
+          "moves": 155,
+          "opening": "相掛かり",
+          "meals": [
+            {
+              "label": "昼食",
+              "holder": "泉州産ねぎすじコン焼と豚角煮膳、緑茶",
+              "challenger": "犬鳴ポークの炙りカレー・「喫茶まる」のサバサンド、泉佐野産いちごのスムージー"
+            },
+            {
+              "label": "午後のおやつ",
+              "holder": "マンスリーシーズン ドリームストーリー(さくらんぼのドームケーキ)、ストレートティー",
+              "challenger": "チョコミルキーパフェ、自家製レモンソーダ"
+            }
+          ],
+          "sourceURL": "https://kifulog.shogi.or.jp/eiou/2026/05/post-bc24-1.html",
+          "summary": "先手斎藤の相掛かり。千日手含みの長い中盤から斎藤が打開を決断して激戦となり、両者1分将棋の熱戦を155手で制した。2勝2敗のタイでフルセットへ。",
+          "kifuURL": "http://live.shogi.or.jp/eiou/kifu/11/eiou202605230101.html"
+        },
+        {
+          "game": 5,
+          "start": "2026-05-31",
+          "days": 1,
+          "venue": "柏の葉カンファレンスセンター",
+          "city": "千葉県柏市",
+          "result": "holder",
+          "moves": 117,
+          "opening": "相掛かり",
+          "meals": [
+            {
+              "label": "昼食",
+              "holder": "特上うな重、ウーロン茶",
+              "challenger": "冷やしタンタンメン(並)、ブラッドオレンジジュース"
+            },
+            {
+              "label": "午後のおやつ",
+              "holder": "北海道産夕張メロンのダブルミルクレープ、水出しアイスティー",
+              "challenger": "北海道産夕張メロンのダブルミルクレープ、アイスココアラテ"
+            }
+          ],
+          "sourceURL": "https://kifulog.shogi.or.jp/eiou/2026/05/post-bc24-2.html",
+          "summary": "改めての振り駒で伊藤の先手となり、得意の相掛かりに。序盤の主導権争いから長期戦にもつれたが、伊藤が117手で制して防衛。2期連続フルセットの死闘を締めくくり叡王3連覇を達成した。",
+          "kifuURL": "http://live.shogi.or.jp/eiou/kifu/11/eiou202605310101.html"
+        }
+      ]
+    },
+    {
+      "id": "oui",
+      "name": "王位",
+      "seriesName": "王位戦",
+      "rank": 4,
+      "term": 67,
+      "bestOf": 7,
+      "holder": "藤井聡太",
+      "holderTerms": 6,
+      "challenger": "伊藤匠",
+      "status": "ongoing",
+      "sponsor": "新聞三社連合",
+      "broadcast": "ABEMA・囲碁将棋プラスで中継予定",
+      "note": "藤井王位は7連覇、伊藤二冠は三冠を懸けた七番勝負",
+      "holderWins": 0,
+      "challengerWins": 0,
+      "games": [
+        {
+          "game": 1,
+          "start": "2026-07-04",
+          "days": 2,
+          "venue": "はままつ八幡宮 楠倶楽部",
+          "city": "静岡県浜松市",
+          "result": "challenger",
+          "moves": 138,
+          "opening": "角換わり",
+          "meals": [
+            {
+              "label": "1日目 昼食",
+              "holder": "混ぜご飯(刻んだうなぎとゴボウをたれで和えた郷土料理)、冷たい緑茶",
+              "challenger": "うな重、温かい緑茶"
+            },
+            {
+              "label": "1日目 午後のおやつ",
+              "holder": "天使のシュークリーム、アイスティー",
+              "challenger": "まるごとピーチ、ブルーベリースカッシュ"
+            },
+            {
+              "label": "2日目 昼食",
+              "holder": "150年伝承鳥味噌鍋(釜炊きご飯付き)、ウーロン茶",
+              "challenger": "うなぎ南蛮そば、温かい緑茶"
+            },
+            {
+              "label": "2日目 午後のおやつ",
+              "holder": "小豆餅、冷たい緑茶",
+              "challenger": "台湾珈琲ゼリー、冷たい緑茶"
+            }
+          ],
+          "sourceURL": "https://kifulog.shogi.or.jp/oui/2026/07/post-70fe.html",
+          "summary": "角換わりの2日制。終盤は互いに攻め合う激戦となったが、伊藤が自玉を安全にしながら藤井の玉と飛車を圧迫して優位を拡大。138手で制してシリーズ先勝を挙げた。",
+          "kifuURL": "http://live.shogi.or.jp/oui/kifu/67/oui202607040101.html"
+        },
+        {
+          "game": 2,
+          "start": "2026-07-15",
+          "days": 2,
+          "venue": "中の坊瑞苑",
+          "city": "兵庫県神戸市",
+          "result": "holder",
+          "moves": 100,
+          "opening": "相掛かり",
+          "meals": [
+            {
+              "label": "1日目 昼食",
+              "holder": "淡路産鱧と夏野菜の天婦羅とうどん膳",
+              "challenger": "神戸牛と淡路産玉葱の丼ぶり膳"
+            },
+            {
+              "label": "2日目 午後のおやつ",
+              "holder": "有馬天然水サイダー、マンゴージュース",
+              "challenger": "アイスストレートティー"
+            }
+          ],
+          "sourceURL": "https://kifulog.shogi.or.jp/oui/2026/07/post-0eba.html",
+          "summary": "相掛かりの激しい主導権争いは副立会人が「奇跡の将棋」と評す熱戦に。伊藤が69手目を封じたが、2日目は藤井が飛車を切って角2枚を敵陣に侵入させる攻めをつなぎ、100手で快勝して1勝1敗に戻した。",
+          "kifuURL": "http://live.shogi.or.jp/oui/kifu/67/oui202607150101.html"
+        },
+        {
+          "game": 3,
+          "start": "2026-07-29",
+          "days": 2,
+          "venue": "登別グランドホテル",
+          "city": "北海道登別市",
+          "result": null
+        },
+        {
+          "game": 4,
+          "start": "2026-08-18",
+          "days": 2,
+          "venue": "ガーデンテラス長崎ホテル&リゾート",
+          "city": "長崎県長崎市",
+          "result": null
+        },
+        {
+          "game": 5,
+          "start": "2026-08-26",
+          "days": 2,
+          "venue": "渭水苑",
+          "city": "徳島県徳島市",
+          "result": null
+        },
+        {
+          "game": 6,
+          "start": "2026-09-08",
+          "days": 2,
+          "venue": "元湯 陣屋",
+          "city": "神奈川県秦野市",
+          "result": null
+        },
+        {
+          "game": 7,
+          "start": "2026-09-28",
+          "days": 2,
+          "venue": "常磐ホテル",
+          "city": "山梨県甲府市",
+          "result": null
+        }
+      ]
+    },
+    {
+      "id": "oza",
+      "name": "王座",
+      "seriesName": "王座戦",
+      "rank": 5,
+      "term": 74,
+      "bestOf": 5,
+      "holder": "伊藤匠",
+      "holderTerms": 1,
+      "challenger": null,
+      "status": "upcoming",
+      "sponsor": "日本経済新聞社",
+      "broadcast": "ABEMA・囲碁将棋プラスで中継予定",
+      "note": "挑戦者決定トーナメント進行中。五番勝負は9月開幕予定",
+      "holderWins": 0,
+      "challengerWins": 0,
+      "games": []
+    },
+    {
+      "id": "kisei",
+      "name": "棋聖",
+      "seriesName": "棋聖戦",
+      "rank": 6,
+      "term": 97,
+      "bestOf": 5,
+      "holder": "藤井聡太",
+      "holderTerms": 7,
+      "challenger": "服部慎一郎",
+      "status": "finished",
+      "sponsor": "産経新聞社",
+      "broadcast": "ABEMA・囲碁将棋プラスで中継",
+      "note": "藤井棋聖が3-0で防衛(7連覇)",
+      "holderWins": 0,
+      "challengerWins": 0,
+      "games": [
+        {
+          "game": 1,
+          "start": "2026-06-04",
+          "days": 1,
+          "venue": "龍宮城スパホテル三日月",
+          "city": "千葉県木更津市",
+          "result": "holder",
+          "moves": 99,
+          "opening": "角換わり",
+          "meals": [
+            {
+              "label": "昼食",
+              "holder": "国産牛のステーキ丼 クレソンのサラダ添え",
+              "challenger": "ハーフサイズ3品(はまぐりと帆立とからすみのアーリオ・オーリオ・ペペロンチーノ/国産牛のステーキ丼/かけそば あじ天 三日月野菜の天婦羅)"
+            },
+            {
+              "label": "午後のおやつ",
+              "holder": "ほうじ茶ときなこのティラミス、ブルーベリージュース",
+              "challenger": "豆腐と白玉のあんみつ、ずんだ餡柏餅、オレンジジュース"
+            }
+          ],
+          "sourceURL": "https://kifulog.shogi.or.jp/kisei/2026/06/post-bc24.html",
+          "summary": "力戦調の角換わりから早々に前例を離れた戦いに。服部の2枚の飛車を並べる珍形の攻めに藤井は受けに回って崩れず、99手で先勝を飾った。",
+          "kifuURL": "http://live.shogi.or.jp/kisei/kifu/97/kisei202606040101.html"
+        },
+        {
+          "game": 2,
+          "start": "2026-06-19",
+          "days": 1,
+          "venue": "日光金谷ホテル",
+          "city": "栃木県日光市",
+          "result": "holder",
+          "moves": 80,
+          "opening": "相掛かり",
+          "meals": [
+            {
+              "label": "昼食",
+              "holder": "金谷ホテル特製百年ライスカレー薬味添え(ビーフ)、アイスティー",
+              "challenger": "栃木県那珂川産「鰻」のうな重、味噌汁、香の物、緑茶(温)、ウーロン茶(冷)"
+            },
+            {
+              "label": "午後のおやつ",
+              "holder": "金谷ホテルオリジナル「とちあいか」の苺ミルクアイス、金谷りんごジュース",
+              "challenger": "「金谷百年カレー」パイ、緑茶(温)"
+            }
+          ],
+          "sourceURL": "https://kifulog.shogi.or.jp/kisei/2026/06/post-bc24-1.html",
+          "summary": "服部先手の相掛かりで序盤から激しい戦いに。互いの深い読みがぶつかる中盤を藤井が制して80手で快勝し、開幕2連勝で防衛・7連覇に王手をかけた。",
+          "kifuURL": "http://live.shogi.or.jp/kisei/kifu/97/kisei202606190101.html"
+        },
+        {
+          "game": 3,
+          "start": "2026-07-01",
+          "days": 1,
+          "venue": "沼津御用邸 東附属邸第1学問所",
+          "city": "静岡県沼津市",
+          "result": "holder",
+          "moves": 87,
+          "opening": "角換わり",
+          "meals": [
+            {
+              "label": "昼食",
+              "holder": "特製カレー、紅茶(アイス)",
+              "challenger": "沼津あじたるサンドセット(ポテト多め)、オレンジジュース"
+            },
+            {
+              "label": "午後のおやつ",
+              "holder": "あんみつ、西浦レモネードスカッシュ",
+              "challenger": "御用邸パフェ、西浦レモネードスカッシュ"
+            }
+          ],
+          "sourceURL": "https://kifulog.shogi.or.jp/kisei/2026/07/post-97d2.html",
+          "summary": "角換わりから後手の服部が右玉を採用。戦いが始まると藤井が中盤で流れを引き寄せ、87手で勝利。無傷の3連勝でストレート防衛を果たし、棋聖戦7連覇で大山十五世名人の記録に並んだ。",
+          "kifuURL": "http://live.shogi.or.jp/kisei/kifu/97/kisei202607010101.html"
+        }
+      ]
+    },
+    {
+      "id": "kio",
+      "name": "棋王",
+      "seriesName": "棋王戦",
+      "rank": 7,
+      "term": 52,
+      "bestOf": 5,
+      "holder": "藤井聡太",
+      "holderTerms": 4,
+      "challenger": null,
+      "status": "upcoming",
+      "sponsor": "共同通信社",
+      "broadcast": "ABEMA・囲碁将棋プラスで中継予定",
+      "note": "挑戦者決定トーナメント進行中。五番勝負は2027年2月開幕予定で、第1局は静岡県焼津市での開催が決定",
+      "holderWins": 0,
+      "challengerWins": 0,
+      "games": []
+    },
+    {
+      "id": "osho",
+      "name": "王将",
+      "seriesName": "王将戦",
+      "rank": 8,
+      "term": 76,
+      "bestOf": 7,
+      "holder": "藤井聡太",
+      "holderTerms": 5,
+      "challenger": null,
+      "status": "upcoming",
+      "sponsor": "スポーツニッポン新聞社・毎日新聞社",
+      "broadcast": "ABEMA・囲碁将棋プラスで中継予定",
+      "note": "挑戦者決定リーグ進行中。七番勝負は2027年1月開幕予定",
+      "holderWins": 0,
+      "challengerWins": 0,
+      "games": []
+    }
+  ]
+}
