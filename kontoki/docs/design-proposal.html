@@ -1,0 +1,617 @@
+<title>SSTアプリ「こんとき」デザイン案</title>
+<style>
+  /* デザイン案はアプリ実機の見た目を示すため、閲覧環境のテーマに関わらずライト配色に固定 */
+  :root, :root[data-theme="dark"], :root[data-theme="light"] {
+    --ground: #F2F6F1;
+    --card: #FFFFFF;
+    --ink: #31473F;
+    --ink-soft: #64796F;
+    --line: #DCE6DD;
+    --primary: #4E8D7C;
+    --primary-deep: #3A6E60;
+    --reward: #F0BE4A;
+    --reward-soft: #FBEFD3;
+    --calm-blue: #7FA8C9;
+    --calm-plum: #A98BB5;
+    --calm-rose: #D98E8E;
+    --screen-bg: #F7FAF6;
+    --shadow: 0 12px 32px rgba(49, 71, 63, 0.10);
+  }
+  html, body { color-scheme: light; }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Hiragino Maru Gothic ProN", "BIZ UDPGothic", "Yu Gothic Medium", "Yu Gothic", "Noto Sans JP", sans-serif;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 56px 24px 96px; }
+
+  .eyebrow {
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--primary); font-weight: 700;
+  }
+  h1 {
+    font-size: clamp(28px, 4.5vw, 44px); line-height: 1.3; margin: 12px 0 8px;
+    text-wrap: balance; font-weight: 800;
+  }
+  h1 .app-name { color: var(--primary-deep); }
+  .lead { max-width: 40em; color: var(--ink-soft); font-size: 15.5px; margin: 0 0 12px; }
+  h2 { font-size: 21px; margin: 72px 0 8px; font-weight: 800; }
+  h2 + .sec-note { color: var(--ink-soft); font-size: 14px; max-width: 44em; margin: 0 0 28px; }
+
+  /* ---- principles ---- */
+  .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 28px; }
+  .principle {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 20px 22px;
+  }
+  .principle .p-label { font-weight: 800; font-size: 15.5px; display: flex; align-items: center; gap: 10px; }
+  .p-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); flex: none; }
+  .principle p { font-size: 13.5px; color: var(--ink-soft); margin: 8px 0 0; }
+
+  /* ---- phone gallery ---- */
+  .gallery { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
+  .shot { width: 288px; }
+  .shot figcaption { margin-top: 14px; font-size: 13px; color: var(--ink-soft); }
+  .shot figcaption b { color: var(--ink); font-size: 14px; display: block; margin-bottom: 2px; }
+  figure { margin: 0; }
+
+  .phone {
+    width: 288px; height: 588px; border-radius: 40px; background: var(--screen-bg);
+    border: 8px solid #2A2E2C; box-shadow: var(--shadow);
+    overflow: hidden; display: flex; flex-direction: column; position: relative;
+  }
+  .statusbar { height: 34px; flex: none; display: flex; align-items: center; justify-content: center; }
+  .notch { width: 84px; height: 20px; background: #2A2E2C; border-radius: 12px; }
+  .screen { flex: 1; display: flex; flex-direction: column; padding: 10px 16px 12px; gap: 12px; overflow: hidden; }
+
+  .app-greet { font-size: 13px; color: var(--ink-soft); }
+  .app-greet b { color: var(--ink); font-size: 16px; display: block; }
+
+  .today-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 16px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .chip {
+    align-self: flex-start; font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em;
+    background: var(--reward-soft); color: #8A6A1D; border-radius: 999px; padding: 3px 10px;
+  }
+  .today-card .t-title { font-size: 16.5px; font-weight: 800; line-height: 1.45; }
+  .today-card .t-sub { font-size: 12px; color: var(--ink-soft); }
+  .btn-big {
+    background: var(--primary); color: #fff; border-radius: 16px; text-align: center;
+    font-weight: 800; font-size: 15px; padding: 13px 0; margin-top: 2px;
+  }
+
+  .stamp-block { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 14px 16px; }
+  .stamp-block .s-label { font-size: 12px; font-weight: 800; margin-bottom: 8px; }
+  .stamps { display: flex; gap: 8px; }
+  .stamp { width: 26px; height: 26px; border-radius: 50%; border: 2px dashed var(--line); }
+  .stamp.done { border: none; background: var(--reward); position: relative; }
+  .stamp.done::after {
+    content: ""; position: absolute; inset: 0; margin: auto; width: 12px; height: 7px;
+    border-left: 2.5px solid #7A5A10; border-bottom: 2.5px solid #7A5A10; transform: rotate(-45deg) translate(1px, -2px);
+  }
+
+  .preview-note {
+    font-size: 11.5px; color: var(--ink-soft); background: var(--card); border: 1px solid var(--line);
+    border-radius: 14px; padding: 10px 12px; display: flex; gap: 8px; align-items: flex-start;
+  }
+  .preview-note .p-i { flex: none; width: 18px; height: 18px; border-radius: 50%; background: var(--calm-blue); color: #fff; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+  .tabbar {
+    flex: none; display: flex; border-top: 1px solid var(--line); background: var(--card);
+    padding: 8px 6px 14px; margin: 0 -16px -12px;
+  }
+  .tab { flex: 1; text-align: center; font-size: 10px; color: var(--ink-soft); display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .tab.active { color: var(--primary-deep); font-weight: 800; }
+  .tab svg { width: 22px; height: 22px; }
+
+  /* scenario screen */
+  .scene-head { font-size: 12px; color: var(--ink-soft); display: flex; justify-content: space-between; align-items: center; }
+  .scene-step { font-weight: 800; color: var(--primary-deep); }
+  .illust {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    padding: 10px; display: flex; align-items: center; justify-content: center;
+  }
+  .illust svg { width: 100%; height: auto; display: block; }
+  .q-text { font-size: 15px; font-weight: 800; line-height: 1.55; }
+  .choices { display: flex; flex-direction: column; gap: 9px; }
+  .choice {
+    display: flex; align-items: center; gap: 10px; background: var(--card);
+    border: 1.5px solid var(--line); border-radius: 16px; padding: 10px 12px;
+    font-size: 13.5px; font-weight: 700;
+  }
+  .choice .c-badge {
+    flex: none; width: 34px; height: 34px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .choice.picked { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(78, 141, 124, 0.18); }
+
+  /* result screen */
+  .result-praise { text-align: center; display: flex; flex-direction: column; gap: 4px; align-items: center; }
+  .praise-big { font-size: 18px; font-weight: 800; color: var(--primary-deep); }
+  .praise-sub { font-size: 12.5px; color: var(--ink-soft); }
+  .got-stamp {
+    display: flex; align-items: center; gap: 10px; justify-content: center; background: var(--reward-soft);
+    border-radius: 16px; padding: 10px 14px; font-size: 13px; font-weight: 800; color: #8A6A1D;
+  }
+  .mini-stamp { width: 22px; height: 22px; border-radius: 50%; background: var(--reward); flex: none; }
+  .btn-line {
+    border: 1.5px solid var(--line); background: var(--card); border-radius: 16px; text-align: center;
+    font-weight: 800; font-size: 13.5px; padding: 11px 0; color: var(--ink);
+  }
+
+  /* emotion quiz */
+  .emo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .emo {
+    display: flex; align-items: center; gap: 8px; background: var(--card); border: 1.5px solid var(--line);
+    border-radius: 14px; padding: 9px 11px; font-size: 12.5px; font-weight: 800;
+  }
+  .emo .e-chip { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+
+  /* supporter dashboard */
+  .tablet {
+    background: var(--screen-bg); border: 8px solid #2A2E2C; border-radius: 28px;
+    box-shadow: var(--shadow); width: 100%; max-width: 620px; padding: 22px 24px;
+  }
+  .tablet .d-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+  .tablet .d-title { font-weight: 800; font-size: 16px; }
+  .tablet .d-date { font-size: 12px; color: var(--ink-soft); }
+  .kid-row {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 13px 16px; display: grid; grid-template-columns: 130px 1fr; gap: 6px 18px; margin-bottom: 10px;
+    align-items: center;
+  }
+  .kid-name { font-weight: 800; font-size: 14px; }
+  .kid-meta { font-size: 11px; color: var(--ink-soft); }
+  .skills { display: flex; flex-direction: column; gap: 6px; }
+  .skill { display: grid; grid-template-columns: 92px 1fr 34px; gap: 10px; align-items: center; font-size: 11.5px; }
+  .skill .sk-name { color: var(--ink-soft); font-weight: 700; }
+  .bar { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; }
+  .bar i { display: block; height: 100%; border-radius: 999px; background: var(--primary); }
+  .skill .sk-num { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+  .memo { grid-column: 1 / -1; font-size: 12px; background: var(--ground); border-radius: 10px; padding: 8px 12px; color: var(--ink-soft); }
+  .memo b { color: var(--ink); }
+
+  /* palette */
+  .tokens { display: flex; flex-wrap: wrap; gap: 14px; }
+  .token { width: 150px; }
+  .swatch { height: 64px; border-radius: 14px; border: 1px solid var(--line); }
+  .token .t-name { font-size: 12.5px; font-weight: 800; margin-top: 8px; }
+  .token .t-hex { font-size: 11px; color: var(--ink-soft); font-family: ui-monospace, "SF Mono", monospace; }
+  .token .t-use { font-size: 11px; color: var(--ink-soft); }
+
+  /* content flow */
+  .flow { display: flex; flex-direction: column; align-items: center; gap: 0; max-width: 560px; }
+  .flow-sources { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+  .fbox {
+    background: var(--card); border: 1.5px solid var(--line); border-radius: 14px;
+    padding: 12px 16px; font-size: 13px; width: 100%; text-align: center;
+  }
+  .fbox b { display: block; font-size: 13.5px; }
+  .fbox .f-sub { font-size: 11.5px; color: var(--ink-soft); }
+  .fbox.accent { border-color: var(--primary); background: #EDF4F1; }
+  .fbox.dashed { border-style: dashed; color: var(--ink-soft); }
+  .f-arrow { color: var(--primary); font-weight: 800; font-size: 15px; padding: 4px 0; }
+
+  .next {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px 26px; max-width: 620px;
+  }
+  .next ol { margin: 6px 0 0; padding-left: 20px; font-size: 14px; }
+  .next li { margin-bottom: 6px; }
+  .next li::marker { color: var(--primary); font-weight: 800; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .shot { animation: rise 0.5s ease both; }
+    .shot:nth-child(2) { animation-delay: 0.06s; }
+    .shot:nth-child(3) { animation-delay: 0.12s; }
+    .shot:nth-child(4) { animation-delay: 0.18s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Design Proposal / SST App</div>
+  <h1><span class="app-name">「こんとき」</span> — こんなとき、どうする?を<br>まいにち1つ、れんしゅうするアプリ</h1>
+  <p class="lead">ソーシャルスキルトレーニング(SST)アプリのデザイン案。対象は放課後等デイサービス・特別支援学級に通う小学生と、その支援者(指導員・教員・保護者)。子ども向け画面と支援者向け画面の2面構成で、「1日1シナリオ+きもちクイズ」だけの小さな習慣に絞る。</p>
+
+  <h2>デザイン原則</h2>
+  <p class="sec-note">SSTの対象児には感覚過敏・見通し不安・失敗への強い恐れを持つ子が多い。UIの全判断をこの3原則から導く。</p>
+  <div class="principles">
+    <div class="principle">
+      <div class="p-label"><span class="p-dot"></span>失敗をつくらない</div>
+      <p>選択肢に「不正解」の烙印を押さない。どれを選んでも「やってみたらどうなるか」を見せて戻れる。バツ印・減点・赤色の否定フィードバックは全面禁止。</p>
+    </div>
+    <div class="principle">
+      <div class="p-label"><span class="p-dot"></span>見通しが立つ</div>
+      <p>いま何問目か、次に何が起きるかを常に画面上部に予告。1回のセッションは3分以内で終わる長さに固定し、「おわり」が必ず見える。</p>
+    </div>
+    <div class="principle">
+      <div class="p-label"><span class="p-dot"></span>刺激をしぼる</div>
+      <p>彩度を抑えた若葉色ベース。1画面1タスク、アニメーションは完了時のみ。ごほうび色(黄色)はスタンプにだけ使い、価値を薄めない。</p>
+    </div>
+  </div>
+
+  <h2>キャラクター</h2>
+  <p class="sec-note">シナリオの登場人物は固定の2人+マスコット。毎回同じ顔ぶれが登場することで、初めての状況でも「知っている世界」として安心して取り組める。イラストは太い輪郭線+ベタ塗り+白背景のミニマルタッチ(採用スタイルB)で統一し、表情の読み取りやすさを最優先する。</p>
+  <div class="gallery" style="gap:20px">
+    <figure class="shot" style="width:170px">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px;display:flex;justify-content:center">
+        <svg width="120" height="130" viewBox="0 0 120 130">
+          <rect x="34" y="92" width="52" height="34" rx="15" fill="#7FA8C9" stroke="#3A4A44" stroke-width="3"/>
+          <path d="M54 92h12l-6 9z" fill="#FFFFFF"/>
+          <circle cx="60" cy="58" r="30" fill="#F8DCC0" stroke="#3A4A44" stroke-width="3"/>
+          <path d="M30.7 54 a30 30 0 0 1 58.6 0 z" fill="#8A6B4F" stroke="#3A4A44" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="27" y="48" width="10" height="20" rx="5" fill="#8A6B4F" stroke="#3A4A44" stroke-width="3"/>
+          <rect x="83" y="48" width="10" height="20" rx="5" fill="#8A6B4F" stroke="#3A4A44" stroke-width="3"/>
+          <path d="M44 48 q5 -4 10 -1 M66 47 q5 -3 10 1" stroke="#42332A" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <circle cx="50" cy="60" r="3.4" fill="#42332A"/><circle cx="70" cy="60" r="3.4" fill="#42332A"/>
+          <circle cx="49" cy="58.8" r="1.1" fill="#FFFFFF"/><circle cx="69" cy="58.8" r="1.1" fill="#FFFFFF"/>
+          <ellipse cx="41" cy="68" rx="5" ry="2.8" fill="#F5B8A5" opacity="0.65"/>
+          <ellipse cx="79" cy="68" rx="5" ry="2.8" fill="#F5B8A5" opacity="0.65"/>
+          <path d="M52 72 q8 6 16 0" stroke="#42332A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <figcaption><b>ゆうくん(8)</b>主人公。ことばで伝えるのがすこし苦手。プレイヤーはゆうくんの目線で選ぶ。</figcaption>
+    </figure>
+    <figure class="shot" style="width:170px">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px;display:flex;justify-content:center">
+        <svg width="120" height="130" viewBox="0 0 120 130">
+          <rect x="34" y="92" width="52" height="34" rx="15" fill="#A98BB5" stroke="#3A4A44" stroke-width="3"/>
+          <path d="M54 92h12l-6 9z" fill="#FFFFFF"/>
+          <circle cx="30" cy="38" r="10" fill="#4A3B2E" stroke="#3A4A44" stroke-width="3"/>
+          <circle cx="90" cy="38" r="10" fill="#4A3B2E" stroke="#3A4A44" stroke-width="3"/>
+          <circle cx="60" cy="58" r="30" fill="#F8DCC0" stroke="#3A4A44" stroke-width="3"/>
+          <path d="M30.7 54 a30 30 0 0 1 58.6 0 z" fill="#4A3B2E" stroke="#3A4A44" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="26" y="50" width="11" height="28" rx="5.5" fill="#4A3B2E" stroke="#3A4A44" stroke-width="3"/>
+          <rect x="83" y="50" width="11" height="28" rx="5.5" fill="#4A3B2E" stroke="#3A4A44" stroke-width="3"/>
+          <circle cx="50" cy="60" r="3.4" fill="#42332A"/><circle cx="70" cy="60" r="3.4" fill="#42332A"/>
+          <circle cx="49" cy="58.8" r="1.1" fill="#FFFFFF"/><circle cx="69" cy="58.8" r="1.1" fill="#FFFFFF"/>
+          <ellipse cx="41" cy="68" rx="5" ry="2.8" fill="#F5B8A5" opacity="0.65"/>
+          <ellipse cx="79" cy="68" rx="5" ry="2.8" fill="#F5B8A5" opacity="0.65"/>
+          <path d="M50 71 q10 8 20 0" stroke="#42332A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <figcaption><b>みおちゃん(8)</b>クラスメイト。シナリオの「相手役」。彼女の表情が行動の結果を教えてくれる。</figcaption>
+    </figure>
+    <figure class="shot" style="width:170px">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:20px;padding:14px;display:flex;justify-content:center">
+        <svg width="120" height="130" viewBox="0 0 120 130">
+          <path d="M60 34 q-5 -20 -26 -24 q20 -2 30 13 q5 -17 24 -17 q-15 8 -17 28 z" fill="#4E8D7C" stroke="#3A4A44" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="60" cy="78" r="38" fill="#A9CFC0" stroke="#3A4A44" stroke-width="3"/>
+          <ellipse cx="60" cy="90" rx="24" ry="16" fill="#C4DFD4"/>
+          <circle cx="46" cy="72" r="4.6" fill="#31473F"/>
+          <circle cx="74" cy="72" r="4.6" fill="#31473F"/>
+          <circle cx="44.6" cy="70.4" r="1.5" fill="#FFFFFF"/><circle cx="72.6" cy="70.4" r="1.5" fill="#FFFFFF"/>
+          <path d="M50 84 q10 8 20 0" stroke="#31473F" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <ellipse cx="34" cy="80" rx="6.4" ry="3.8" fill="#F5B8A5" opacity="0.7"/>
+          <ellipse cx="86" cy="80" rx="6.4" ry="3.8" fill="#F5B8A5" opacity="0.7"/>
+        </svg>
+      </div>
+      <figcaption><b>こんちゃん</b>マスコット。ふたばの妖精。ヒントを出し、できたときに一緒によろこぶ。叱る役は絶対にやらない。</figcaption>
+    </figure>
+  </div>
+
+  <h2>こども側:メインフロー</h2>
+  <p class="sec-note">ホーム → シナリオ → けっか → きもちクイズ。文字はすべてひらがな+分かち書き、選択肢は必ず「絵+ことば」のペアで示す。</p>
+
+  <div class="gallery">
+    <!-- 1. HOME -->
+    <figure class="shot">
+      <div class="phone">
+        <div class="statusbar"><div class="notch"></div></div>
+        <div class="screen">
+          <div class="app-greet" style="display:flex;align-items:flex-end;justify-content:space-between;gap:8px">
+            <div>7がつ23にち(すい)<b>ゆうくん、こんにちは</b></div>
+            <svg width="46" height="46" viewBox="0 0 60 60" style="flex:none">
+              <path d="M30 15 q-3 -11 -14 -13 q11 -1 16 7 q3 -9 13 -9 q-8 4 -9 13 z" fill="#4E8D7C" stroke="#3A4A44" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="30" cy="37" r="19" fill="#A9CFC0" stroke="#3A4A44" stroke-width="2"/>
+              <ellipse cx="30" cy="43" rx="12" ry="8" fill="#C4DFD4"/>
+              <circle cx="23" cy="34" r="2.4" fill="#31473F"/>
+              <circle cx="37" cy="34" r="2.4" fill="#31473F"/>
+              <path d="M25 41 q5 4 10 0" stroke="#31473F" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <ellipse cx="17" cy="39" rx="3.4" ry="2" fill="#F5B8A5" opacity="0.7"/>
+              <ellipse cx="43" cy="39" rx="3.4" ry="2" fill="#F5B8A5" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="today-card">
+            <span class="chip">きょうの れんしゅう</span>
+            <div class="t-title">「かして」って<br>いえるかな?</div>
+            <div class="t-sub">3ぷんで おわるよ</div>
+            <div class="btn-big">はじめる</div>
+          </div>
+          <div class="stamp-block">
+            <div class="s-label">こんしゅうの スタンプ</div>
+            <div class="stamps">
+              <span class="stamp done"></span><span class="stamp done"></span><span class="stamp done"></span>
+              <span class="stamp"></span><span class="stamp"></span><span class="stamp"></span><span class="stamp"></span>
+            </div>
+          </div>
+          <div class="preview-note"><span class="p-i">よ</span>あしたも 「かして」。こんどは ブランコの ばめんだよ</div>
+          <div style="flex:1"></div>
+          <div class="tabbar">
+            <div class="tab active">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 4l9 7v8a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>
+              ホーム
+            </div>
+            <div class="tab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M9 14c.8 1 2 1.5 3 1.5s2.2-.5 3-1.5M9.5 10h.01M14.5 10h.01"/></svg>
+              きもち
+            </div>
+            <div class="tab">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
+              きろく
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption><b>① ホーム</b>今日やることは1つだけ。マスコットのこんちゃんが迎え、所要時間を先に約束し、明日の予告で見通しをつくる。テーマは週替わり・場面は日替わり(週テーマ制)。</figcaption>
+    </figure>
+
+    <!-- 2. SCENARIO -->
+    <figure class="shot">
+      <div class="phone">
+        <div class="statusbar"><div class="notch"></div></div>
+        <div class="screen">
+          <div class="scene-head"><span class="scene-step">もんだい 1 / 3</span><span>あと 2ふん</span></div>
+          <div class="illust">
+            <svg viewBox="0 0 240 136">
+              <rect width="240" height="136" rx="10" fill="#FFFFFF"/>
+              <rect x="0" y="100" width="240" height="36" fill="#F3E9D2"/>
+              <rect x="0" y="100" width="240" height="5" fill="#E7D9B8"/>
+              <circle cx="103" cy="36" r="2.2" fill="#FFFFFF" stroke="#D8E2D8"/>
+              <circle cx="110" cy="29" r="3" fill="#FFFFFF" stroke="#D8E2D8"/>
+              <ellipse cx="128" cy="17" rx="19" ry="12" fill="#FFFFFF" stroke="#D8E2D8"/>
+              <rect x="123" y="10" width="9" height="15" rx="2.5" fill="#F0BE4A" stroke="#C99A2B"/>
+              <rect x="123" y="10" width="9" height="4.5" rx="2" fill="#C99A2B"/>
+              <rect x="51" y="86" width="48" height="32" rx="14" fill="#7FA8C9" stroke="#3A4A44" stroke-width="2.5"/>
+              <path d="M69 86h12l-6 8z" fill="#FFFFFF"/>
+              <circle cx="75" cy="58" r="24" fill="#F8DCC0" stroke="#3A4A44" stroke-width="2.5"/>
+              <path d="M51.5 55 a24 24 0 0 1 47 0 z" fill="#8A6B4F" stroke="#3A4A44" stroke-width="2.5" stroke-linejoin="round"/>
+              <rect x="49" y="50" width="8" height="16" rx="4" fill="#8A6B4F" stroke="#3A4A44" stroke-width="2.5"/>
+              <rect x="93" y="50" width="8" height="16" rx="4" fill="#8A6B4F" stroke="#3A4A44" stroke-width="2.5"/>
+              <path d="M62 50 q4 -3 8 -1 M80 49 q4 -2 8 1" stroke="#42332A" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <circle cx="67" cy="60" r="2.8" fill="#42332A"/><circle cx="83" cy="60" r="2.8" fill="#42332A"/>
+              <circle cx="66.2" cy="59" r="0.9" fill="#FFFFFF"/><circle cx="82.2" cy="59" r="0.9" fill="#FFFFFF"/>
+              <ellipse cx="60" cy="67" rx="4.2" ry="2.4" fill="#F5B8A5" opacity="0.65"/>
+              <ellipse cx="90" cy="67" rx="4.2" ry="2.4" fill="#F5B8A5" opacity="0.65"/>
+              <ellipse cx="75" cy="70" rx="3" ry="3.6" fill="#B76E5B"/>
+              <rect x="112" y="80" width="11" height="22" rx="3.5" fill="#F0BE4A" stroke="#3A4A44" stroke-width="2.5"/>
+              <rect x="112" y="80" width="11" height="6" rx="3" fill="#C99A2B"/>
+              <rect x="140" y="86" width="48" height="32" rx="14" fill="#A98BB5" stroke="#3A4A44" stroke-width="2.5"/>
+              <path d="M158 86h12l-6 8z" fill="#FFFFFF"/>
+              <rect x="126" y="90" width="24" height="9" rx="4.5" fill="#F8DCC0" stroke="#3A4A44" stroke-width="2.5" transform="rotate(14 138 94)"/>
+              <circle cx="140" cy="42" r="7.5" fill="#4A3B2E" stroke="#3A4A44" stroke-width="2.5"/>
+              <circle cx="188" cy="42" r="7.5" fill="#4A3B2E" stroke="#3A4A44" stroke-width="2.5"/>
+              <circle cx="164" cy="58" r="24" fill="#F8DCC0" stroke="#3A4A44" stroke-width="2.5"/>
+              <path d="M140.5 55 a24 24 0 0 1 47 0 z" fill="#4A3B2E" stroke="#3A4A44" stroke-width="2.5" stroke-linejoin="round"/>
+              <rect x="138" y="52" width="9" height="22" rx="4.5" fill="#4A3B2E" stroke="#3A4A44" stroke-width="2.5"/>
+              <rect x="181" y="52" width="9" height="22" rx="4.5" fill="#4A3B2E" stroke="#3A4A44" stroke-width="2.5"/>
+              <circle cx="157" cy="60" r="2.8" fill="#42332A"/><circle cx="171" cy="60" r="2.8" fill="#42332A"/>
+              <circle cx="156.2" cy="59" r="0.9" fill="#FFFFFF"/><circle cx="170.2" cy="59" r="0.9" fill="#FFFFFF"/>
+              <ellipse cx="150" cy="67" rx="4.2" ry="2.4" fill="#F5B8A5" opacity="0.65"/>
+              <ellipse cx="178" cy="67" rx="4.2" ry="2.4" fill="#F5B8A5" opacity="0.65"/>
+              <path d="M158 69 q6 5 12 0" stroke="#42332A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="q-text">みおちゃんが つかっている のりを、つかいたいな。<br>どうする?</div>
+          <div class="choices">
+            <div class="choice picked">
+              <span class="c-badge" style="background:#E2EEE9">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3A6E60" stroke-width="2"><path d="M8 12a4 4 0 1 1 8 0v3a4 4 0 0 1-8 0z"/><path d="M12 19v2M5 10a7 7 0 0 1 14 0"/></svg>
+              </span>
+              「かして」って いってみる
+            </div>
+            <div class="choice">
+              <span class="c-badge" style="background:#EAF0F6">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B82A6" stroke-width="2"><path d="M12 5v9M8 10l4 4 4-4"/><path d="M5 19h14"/></svg>
+              </span>
+              だまって つかう
+            </div>
+            <div class="choice">
+              <span class="c-badge" style="background:#F2ECF5">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A6E97" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+              </span>
+              おわるまで まってみる
+            </div>
+          </div>
+          <div style="flex:1"></div>
+          <div class="btn-big">やってみる</div>
+        </div>
+      </div>
+      <figcaption><b>② シナリオ</b>教室でのりを使うみおちゃんと、借りたいゆうくん。吹き出しで「頭の中」を見せる。選択肢は善悪で色分けしない。</figcaption>
+    </figure>
+
+    <!-- 3. RESULT -->
+    <figure class="shot">
+      <div class="phone">
+        <div class="statusbar"><div class="notch"></div></div>
+        <div class="screen">
+          <div class="scene-head"><span class="scene-step">やってみたら…</span><span>もんだい 1 / 3</span></div>
+          <div class="illust">
+            <svg viewBox="0 0 240 136">
+              <rect width="240" height="136" rx="10" fill="#FFFFFF"/>
+              <rect x="0" y="100" width="240" height="36" fill="#F3E9D2"/>
+              <rect x="0" y="100" width="240" height="5" fill="#E7D9B8"/>
+              <rect x="118" y="8" width="78" height="30" rx="15" fill="#FFFFFF" stroke="#DCE6DD"/>
+              <path d="M152 36 l6 12 4 -12 z" fill="#FFFFFF" stroke="#DCE6DD"/>
+              <text x="157" y="28" text-anchor="middle" font-size="14" fill="#3A6E60" font-weight="bold">いいよ!</text>
+              <path d="M22 40 l3 6 6 3 -6 3 -3 6 -3 -6 -6 -3 6 -3 z" fill="#F0BE4A"/>
+              <path d="M210 62 l2.5 5 5 2.5 -5 2.5 -2.5 5 -2.5 -5 -5 -2.5 5 -2.5 z" fill="#F0BE4A" opacity="0.85"/>
+              <path d="M100 20 l2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 4 -2 z" fill="#F0BE4A" opacity="0.7"/>
+              <rect x="30" y="88" width="46" height="30" rx="13" fill="#7FA8C9" stroke="#3A4A44" stroke-width="2.5"/>
+              <rect x="66" y="86" width="24" height="9" rx="4.5" fill="#F8DCC0" stroke="#3A4A44" stroke-width="2.5" transform="rotate(-14 78 90)"/>
+              <circle cx="53" cy="62" r="22" fill="#F8DCC0" stroke="#3A4A44" stroke-width="2.5"/>
+              <path d="M31.5 59 a22 22 0 0 1 43 0 z" fill="#8A6B4F" stroke="#3A4A44" stroke-width="2.5" stroke-linejoin="round"/>
+              <rect x="29" y="55" width="7" height="15" rx="3.5" fill="#8A6B4F" stroke="#3A4A44" stroke-width="2.5"/>
+              <rect x="70" y="55" width="7" height="15" rx="3.5" fill="#8A6B4F" stroke="#3A4A44" stroke-width="2.5"/>
+              <path d="M45 62 q2.5 -4 5 0 M58 62 q2.5 -4 5 0" stroke="#42332A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M46 71 q7 6 14 0" stroke="#42332A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <ellipse cx="40" cy="69" rx="4" ry="2.3" fill="#F5B8A5" opacity="0.7"/>
+              <ellipse cx="66" cy="69" rx="4" ry="2.3" fill="#F5B8A5" opacity="0.7"/>
+              <rect x="102" y="74" width="12" height="24" rx="4" fill="#F0BE4A" stroke="#3A4A44" stroke-width="2.5" transform="rotate(10 108 86)"/>
+              <rect x="146" y="86" width="48" height="32" rx="14" fill="#A98BB5" stroke="#3A4A44" stroke-width="2.5"/>
+              <path d="M164 86h12l-6 8z" fill="#FFFFFF"/>
+              <rect x="116" y="84" width="30" height="9" rx="4.5" fill="#F8DCC0" stroke="#3A4A44" stroke-width="2.5" transform="rotate(-6 131 88)"/>
+              <circle cx="146" cy="42" r="7.5" fill="#4A3B2E" stroke="#3A4A44" stroke-width="2.5"/>
+              <circle cx="194" cy="42" r="7.5" fill="#4A3B2E" stroke="#3A4A44" stroke-width="2.5"/>
+              <circle cx="170" cy="58" r="24" fill="#F8DCC0" stroke="#3A4A44" stroke-width="2.5"/>
+              <path d="M146.5 55 a24 24 0 0 1 47 0 z" fill="#4A3B2E" stroke="#3A4A44" stroke-width="2.5" stroke-linejoin="round"/>
+              <rect x="144" y="52" width="9" height="22" rx="4.5" fill="#4A3B2E" stroke="#3A4A44" stroke-width="2.5"/>
+              <rect x="187" y="52" width="9" height="22" rx="4.5" fill="#4A3B2E" stroke="#3A4A44" stroke-width="2.5"/>
+              <path d="M160 58 q3 -5 6 0 M176 58 q3 -5 6 0" stroke="#42332A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M162 67 q8 8 16 0" stroke="#42332A" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <ellipse cx="154" cy="66" rx="4.2" ry="2.4" fill="#F5B8A5" opacity="0.7"/>
+              <ellipse cx="186" cy="66" rx="4.2" ry="2.4" fill="#F5B8A5" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="result-praise">
+            <div class="praise-big">「かして」が いえたね!</div>
+            <div class="praise-sub">みおちゃんは にっこりして かしてくれたよ。<br>ことばで つたえると、きもちが つたわるね。</div>
+          </div>
+          <div class="got-stamp"><span class="mini-stamp"></span>スタンプを 1こ ゲット!</div>
+          <div style="flex:1"></div>
+          <div class="btn-line">ほかの えらびかたも みてみる</div>
+          <div class="btn-big">つぎへ</div>
+        </div>
+      </div>
+      <figcaption><b>③ けっか</b>目を細めて笑う2人+キラキラで「うまくいった」を絵で伝える。称賛は行動を具体的に名指しする。</figcaption>
+    </figure>
+
+    <!-- 4. EMOTION QUIZ -->
+    <figure class="shot">
+      <div class="phone">
+        <div class="statusbar"><div class="notch"></div></div>
+        <div class="screen">
+          <div class="scene-head"><span class="scene-step">きもちクイズ</span><span>1 / 3</span></div>
+          <div class="illust" style="padding:14px">
+            <svg viewBox="0 0 160 124">
+              <circle cx="26" cy="30" r="10" fill="#4A3B2E" stroke="#3A4A44" stroke-width="3"/>
+              <circle cx="134" cy="30" r="10" fill="#4A3B2E" stroke="#3A4A44" stroke-width="3"/>
+              <circle cx="80" cy="64" r="42" fill="#F8DCC0" stroke="#3A4A44" stroke-width="3"/>
+              <path d="M39 58 a42 42 0 0 1 82 0 z" fill="#4A3B2E" stroke="#3A4A44" stroke-width="3" stroke-linejoin="round"/>
+              <rect x="34" y="50" width="12" height="34" rx="6" fill="#4A3B2E" stroke="#3A4A44" stroke-width="3"/>
+              <rect x="114" y="50" width="12" height="34" rx="6" fill="#4A3B2E" stroke="#3A4A44" stroke-width="3"/>
+              <path d="M60 62 q5 -8 10 0 M90 62 q5 -8 10 0" stroke="#42332A" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M60 78 q20 18 40 0 q-5 16 -20 16 q-15 0 -20 -16 z" fill="#8C4B3F"/>
+              <ellipse cx="80" cy="88" rx="9" ry="5" fill="#E0837A"/>
+              <ellipse cx="52" cy="76" rx="6" ry="3.5" fill="#F5B8A5" opacity="0.75"/>
+              <ellipse cx="108" cy="76" rx="6" ry="3.5" fill="#F5B8A5" opacity="0.75"/>
+              <path d="M138 12 l3 6 6 3 -6 3 -3 6 -3 -6 -6 -3 6 -3 z" fill="#F0BE4A"/>
+              <path d="M18 52 l2.5 5 5 2.5 -5 2.5 -2.5 5 -2.5 -5 -5 -2.5 5 -2.5 z" fill="#F0BE4A" opacity="0.85"/>
+            </svg>
+          </div>
+          <div class="q-text">みおちゃんは いま、どんな きもちかな?</div>
+          <div class="emo-grid">
+            <div class="emo"><span class="e-chip" style="background:var(--reward)"></span>うれしい</div>
+            <div class="emo"><span class="e-chip" style="background:var(--calm-blue)"></span>かなしい</div>
+            <div class="emo"><span class="e-chip" style="background:var(--calm-rose)"></span>おこってる</div>
+            <div class="emo"><span class="e-chip" style="background:var(--calm-plum)"></span>びっくり</div>
+          </div>
+          <div class="preview-note"><span class="p-i">ヒ</span>くちの かたちを みてみよう</div>
+          <div style="flex:1"></div>
+          <div class="btn-big">きめた!</div>
+        </div>
+      </div>
+      <figcaption><b>④ きもちクイズ</b>みおちゃんの表情の読み取り練習。感情には固定の色を割り当て、アプリ全体で一貫させる。ヒントは口元・眉など見る場所を誘導。</figcaption>
+    </figure>
+  </div>
+
+  <h2>コンテンツ編成:こどもは選ばない</h2>
+  <p class="sec-note">現場のSSTは「週1回・1テーマを深く・数週間反復」が標準。アプリはその間の6日間を埋める毎日3分の般化練習と位置づけ、編成は「週テーマ×日替わり場面」にする。選ぶ負荷はこどもに一切かけず、大人の意思決定も週1回に圧縮する。</p>
+  <div class="principles" style="margin-bottom:28px">
+    <div class="principle">
+      <div class="p-label"><span class="p-dot"></span>こどもは選ばない</div>
+      <p>開いたら今日の1本が待っているだけ。選択画面は見通し原則と矛盾し、選べる子は得意なものに偏るため、メインフローから選択を排除する。</p>
+    </div>
+    <div class="principle">
+      <div class="p-label"><span class="p-dot"></span>大人は「処方」する</div>
+      <p>支援者・保護者は毎日選ぶのではなく、週1回「今週のテーマ」を設定するだけ。施設のSSTセッションと同期でき、ここが支援者向け有料機能の核になる。</p>
+    </div>
+    <div class="principle">
+      <div class="p-label"><span class="p-dot"></span>選ぶ楽しさは「おかわり」へ</div>
+      <p>今日の1本を終えた後だけ、過去シナリオの図書館から自由に選んで復習できる。新作は出さないので供給も破綻しない。</p>
+    </div>
+  </div>
+  <div class="flow">
+    <div class="flow-sources">
+      <div class="fbox"><b>自動編成</b><span class="f-sub">標準カリキュラム+実績データ(未設定ならこちら)</span></div>
+      <div class="fbox"><b>処方</b><span class="f-sub">支援者・保護者が週1回設定(自動編成に優先)</span></div>
+    </div>
+    <div class="f-arrow">▼</div>
+    <div class="fbox accent"><b>今週のテーマ:「かして」</b><span class="f-sub">同じスキルを1週間反復(現場の反復原則に一致)</span></div>
+    <div class="f-arrow">▼</div>
+    <div class="fbox"><b>日替わりの場面</b><span class="f-sub">のり → ブランコ → ゲーム → 図書室の本 →…(般化のための場面バリエーション)</span></div>
+    <div class="f-arrow">▼</div>
+    <div class="fbox accent"><b>こども:きょうの1本(3分)</b><span class="f-sub">選択なし。開いたら始まる</span></div>
+    <div class="f-arrow" style="color:var(--ink-soft)">▽</div>
+    <div class="fbox dashed"><b>おかわり図書館</b><span class="f-sub">完了後のみ解放。過去のシナリオを自由に復習</span></div>
+  </div>
+
+  <h2>支援者側:記録ダッシュボード</h2>
+  <p class="sec-note">指導員・保護者向けはトーンを切り替え、データ密度を上げる。SSTの現場は紙の記録が主流なので、「個別支援計画に転記できる記録が自動で貯まる」ことがアプリ最大の売り。ここが有料化ポイント(施設向けB2B)。</p>
+
+  <div class="tablet">
+    <div class="d-head">
+      <span class="d-title">きょうの取り組み — ひまわり教室</span>
+      <span class="d-date">2026/07/23(水)</span>
+    </div>
+    <div style="background:var(--card);border:1.5px solid var(--primary);border-radius:16px;padding:12px 16px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <div>
+        <div style="font-size:11px;color:var(--ink-soft);font-weight:700">今週のテーマ(処方)</div>
+        <div style="font-weight:800;font-size:14px">「かして」— 場面:のり → ブランコ → ゲーム → 本</div>
+      </div>
+      <span style="flex:none;font-size:12px;font-weight:800;color:var(--primary-deep);border:1.5px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--screen-bg)">へんこう</span>
+    </div>
+    <div class="kid-row">
+      <div>
+        <div class="kid-name">ゆうくん(8)</div>
+        <div class="kid-meta">今週 3/7 日 ・ 連続 12日</div>
+      </div>
+      <div class="skills">
+        <div class="skill"><span class="sk-name">おねがいする</span><span class="bar"><i style="width:72%"></i></span><span class="sk-num">72%</span></div>
+        <div class="skill"><span class="sk-name">きもちを読む</span><span class="bar"><i style="width:45%"></i></span><span class="sk-num">45%</span></div>
+        <div class="skill"><span class="sk-name">ことわる</span><span class="bar"><i style="width:30%"></i></span><span class="sk-num">30%</span></div>
+      </div>
+      <div class="memo"><b>きょうのメモ:</b>「かして」のシナリオで最初に「だまって つかう」を選択 → 結果を見て自分からやり直し。実生活への般化を保護者と共有したい。</div>
+    </div>
+    <div class="kid-row">
+      <div>
+        <div class="kid-name">みおちゃん(10)</div>
+        <div class="kid-meta">今週 5/7 日 ・ 連続 4日</div>
+      </div>
+      <div class="skills">
+        <div class="skill"><span class="sk-name">おねがいする</span><span class="bar"><i style="width:88%"></i></span><span class="sk-num">88%</span></div>
+        <div class="skill"><span class="sk-name">きもちを読む</span><span class="bar"><i style="width:81%"></i></span><span class="sk-num">81%</span></div>
+        <div class="skill"><span class="sk-name">ことわる</span><span class="bar"><i style="width:52%"></i></span><span class="sk-num">52%</span></div>
+      </div>
+      <div class="memo"><b>きょうのメモ:</b>きもちクイズ全問正答。次週から「じょうだんと ほんき」の上級シナリオへ。</div>
+    </div>
+  </div>
+
+  <h2>カラーパレット</h2>
+  <p class="sec-note">低刺激を最優先し、全色の彩度を抑える。ごほうびの黄色だけがわずかに明度が高く、スタンプ以外には使わない。輪郭線は黒ではなく深緑(#3A4A44)を使い、はっきりした線と低刺激を両立する。</p>
+  <div class="tokens">
+    <div class="token"><div class="swatch" style="background:#F2F6F1"></div><div class="t-name">わかば(地色)</div><div class="t-hex">#F2F6F1</div><div class="t-use">背景</div></div>
+    <div class="token"><div class="swatch" style="background:#4E8D7C"></div><div class="t-name">ふかみどり</div><div class="t-hex">#4E8D7C</div><div class="t-use">主ボタン・進行</div></div>
+    <div class="token"><div class="swatch" style="background:#31473F"></div><div class="t-name">よるのもり</div><div class="t-hex">#31473F</div><div class="t-use">文字色</div></div>
+    <div class="token"><div class="swatch" style="background:#3A4A44"></div><div class="t-name">りんかく</div><div class="t-hex">#3A4A44</div><div class="t-use">イラスト輪郭線</div></div>
+    <div class="token"><div class="swatch" style="background:#F0BE4A"></div><div class="t-name">ごほうび</div><div class="t-hex">#F0BE4A</div><div class="t-use">スタンプ専用</div></div>
+    <div class="token"><div class="swatch" style="background:#7FA8C9"></div><div class="t-name">かなしみ</div><div class="t-hex">#7FA8C9</div><div class="t-use">感情:かなしい</div></div>
+    <div class="token"><div class="swatch" style="background:#A98BB5"></div><div class="t-name">びっくり</div><div class="t-hex">#A98BB5</div><div class="t-use">感情:びっくり</div></div>
+  </div>
+
+  <h2>次の一歩</h2>
+  <div class="next">
+    <ol>
+      <li><b>シナリオは「スキル10種×場面バリエーション」で書く</b> — 「かして」「じゅんばん」「ことわる」「まける」「じょうだん」など。週テーマ制なので、脚本は場面違いの量産で回る。ここがアプリの本体。</li>
+      <li><b>MVPはこども側の①〜③だけ</b> — きもちクイズと支援者画面は後回しでよい。1シナリオ動けば放デイ1施設でテストできる。</li>
+      <li><b>配布はまずTestFlight</b> — 提携する放デイ施設の職員経由で保護者に配る。この市場なら10家族のフィードバックで十分方向が定まる。</li>
+      <li><b>文字はUDフォントを検討</b> — 実装時は BIZ UDゴシック/UDデジタル教科書体の採用を推奨(読み書き困難のある子への配慮)。</li>
+      <li><b>本番のイラストは発注を想定</b> — このモックの絵はスタイル指定用。実装時はこのタッチ(太い輪郭線・ベタ塗り・低彩度・白背景=採用スタイルB)をイラストレーターかAI画像生成に渡す。</li>
+    </ol>
+  </div>
+</div>

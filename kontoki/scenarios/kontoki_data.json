@@ -1,0 +1,268 @@
+{
+  "dataVersion": 1,
+  "updatedAt": "2026-07-24",
+  "skills": [
+    {
+      "id": "kashite",
+      "title": "かして",
+      "order": 1,
+      "scenes": [
+        {
+          "id": "kashite-nori",
+          "day": 1,
+          "place": "きょうしつ",
+          "prompt": "みおちゃんが つかっている のりを、つかいたいな。どうする?",
+          "image": "kashite-nori-q",
+          "choices": [
+            {
+              "type": "A",
+              "label": "「かして」って いってみる",
+              "result": {
+                "title": "「かして」が いえたね!",
+                "body": "みおちゃんは にっこりして かしてくれたよ。ことばで つたえると、きもちが つたわるね。",
+                "image": "kashite-nori-a",
+                "stamp": true,
+                "coach": null,
+                "retryLabel": "ほかの えらびかたも みてみる"
+              }
+            },
+            {
+              "type": "B",
+              "label": "だまって つかう",
+              "result": {
+                "title": "みおちゃんは びっくりしたみたい",
+                "body": "きゅうに のりが なくなって、かなしい きもちに なったんだって。どうしたら つたわったかな?",
+                "image": "kashite-nori-b",
+                "stamp": false,
+                "coach": "ことばで つたえると、きもちが つたわるよ",
+                "retryLabel": "もういちど やってみる"
+              }
+            },
+            {
+              "type": "C",
+              "label": "おわるまで まってみる",
+              "result": {
+                "title": "しずかに まてたね",
+                "body": "でも こうさくの じかんが おわっちゃうかも。「かして」って いってみたら、どうなるかな?",
+                "image": "kashite-nori-c",
+                "stamp": false,
+                "coach": null,
+                "retryLabel": "「かして」を ためしてみる"
+              }
+            }
+          ],
+          "quiz": {
+            "question": "みおちゃんは いま、どんな きもちかな?",
+            "image": "kashite-nori-quiz",
+            "answer": "happy",
+            "hint": "くちの かたちを みてみよう"
+          }
+        },
+        {
+          "id": "kashite-buranko",
+          "day": 2,
+          "place": "こうえん",
+          "prompt": "こうえんで ブランコに のりたいな。でも みおちゃんが のっている。どうする?",
+          "image": "kashite-buranko-q",
+          "choices": [
+            {
+              "type": "A",
+              "label": "「かわって」って いってみる",
+              "result": {
+                "title": "きもちも つごうも つたえあえたね!",
+                "body": "みおちゃんは「あと 10かい こいだらね!」だって。すこし まったら、ちゃんと かわってくれたよ。",
+                "image": "kashite-buranko-a",
+                "stamp": true,
+                "coach": null,
+                "retryLabel": "ほかの えらびかたも みてみる"
+              }
+            },
+            {
+              "type": "B",
+              "label": "ブランコの まえに たって じっと みる",
+              "result": {
+                "title": "みおちゃんは こわくなっちゃった",
+                "body": "だまって みられて、たのしい きもちが なくなっちゃったみたい。ブランコも やめちゃった。",
+                "image": "kashite-buranko-b",
+                "stamp": false,
+                "coach": "ことばに すると、あいては あんしんするよ",
+                "retryLabel": "もういちど やってみる"
+              }
+            },
+            {
+              "type": "C",
+              "label": "あきらめて かえろうとする",
+              "result": {
+                "title": "のりたい きもちは どこへ いくのかな",
+                "body": "むねが もやもやしたまま だね。「かわって」って いってみたら、どうなるかな?",
+                "image": "kashite-buranko-c",
+                "stamp": false,
+                "coach": null,
+                "retryLabel": "「かわって」を ためしてみる"
+              }
+            }
+          ],
+          "quiz": {
+            "question": "じっと みられたとき、みおちゃんは どんな きもちだったかな?",
+            "image": "kashite-buranko-quiz",
+            "answer": "surprised",
+            "hint": "めの おおきさを みてみよう"
+          }
+        },
+        {
+          "id": "kashite-game",
+          "day": 3,
+          "place": "ほうかごの きょうしつ",
+          "prompt": "みおちゃんが ゲームを している。ぼくも やりたいな。どうする?",
+          "image": "kashite-game-q",
+          "choices": [
+            {
+              "type": "A",
+              "label": "「つぎ、やらせて」って いってみる",
+              "result": {
+                "title": "「つぎ」って いえたね!",
+                "body": "みおちゃんは「この めんが おわったらね」。やくそくどおり かわってくれたよ。あいてに じゅんびの じかんを あげられたね。",
+                "image": "kashite-game-a",
+                "stamp": true,
+                "coach": null,
+                "retryLabel": "ほかの えらびかたも みてみる"
+              }
+            },
+            {
+              "type": "B",
+              "label": "コントローラーを ひっぱる",
+              "result": {
+                "title": "ゲームが とちゅうで きえちゃった",
+                "body": "みおちゃんは おこった かお。たいせつな データが きえて、いやな きもちに なったんだって。",
+                "image": "kashite-game-b",
+                "stamp": false,
+                "coach": "あいてにも たいせつな ものが あるんだね",
+                "retryLabel": "もういちど やってみる"
+              }
+            },
+            {
+              "type": "C",
+              "label": "うしろで ずっと みている",
+              "result": {
+                "title": "みることも たのしいね",
+                "body": "でも 「やりたい」は みおちゃんに つたわっていないみたい。こえに だして みようか。",
+                "image": "kashite-game-c",
+                "stamp": false,
+                "coach": null,
+                "retryLabel": "「つぎ、やらせて」を ためしてみる"
+              }
+            }
+          ],
+          "quiz": {
+            "question": "コントローラーを ひっぱられたとき、みおちゃんは どんな きもちかな?",
+            "image": "kashite-game-quiz",
+            "answer": "angry",
+            "hint": "まゆげの かたちを みてみよう"
+          }
+        },
+        {
+          "id": "kashite-zukan",
+          "day": 4,
+          "place": "としょしつ",
+          "prompt": "としょしつで よみたかった どうぶつずかんを、みおちゃんが よんでいる。どうする?",
+          "image": "kashite-zukan-q",
+          "choices": [
+            {
+              "type": "A",
+              "label": "「おわったら かして」って いってみる",
+              "result": {
+                "title": "おねがいしたら、いいことが おきた!",
+                "body": "みおちゃんは「いっしょに みる?」だって。ならんで ずかんを みたよ。",
+                "image": "kashite-zukan-a",
+                "stamp": true,
+                "coach": null,
+                "retryLabel": "ほかの えらびかたも みてみる"
+              }
+            },
+            {
+              "type": "B",
+              "label": "よこから のぞきこんで ページを めくる",
+              "result": {
+                "title": "ページが やぶれそうに なって ひやっとした",
+                "body": "みおちゃんも びっくりしていたね。",
+                "image": "kashite-zukan-b",
+                "stamp": false,
+                "coach": "ほんは としょしつの みんなの ものだから、そーっとね",
+                "retryLabel": "もういちど やってみる"
+              }
+            },
+            {
+              "type": "C",
+              "label": "ちがう ほんを よんで まつ",
+              "result": {
+                "title": "それも いい ほうほうだね!",
+                "body": "でも よみたい きもちが のこってるなら、「おわったら かして」って よやくも できるよ。",
+                "image": "kashite-zukan-c",
+                "stamp": false,
+                "coach": null,
+                "retryLabel": "「おわったら かして」を ためしてみる"
+              }
+            }
+          ],
+          "quiz": {
+            "question": "いっしょに ずかんを みているとき、みおちゃんは どんな きもちかな?",
+            "image": "kashite-zukan-quiz",
+            "answer": "happy",
+            "hint": "ほっぺを みてみよう"
+          }
+        },
+        {
+          "id": "kashite-iroenpitsu",
+          "day": 5,
+          "place": "こうさくの じかん",
+          "prompt": "みどりの 色えんぴつが つかいたい。みおちゃんが いま つかっている。どうする?",
+          "image": "kashite-iroenpitsu-q",
+          "choices": [
+            {
+              "type": "A",
+              "label": "「つかいおわったら かして」って いってみる",
+              "result": {
+                "title": "こんしゅう 5かいめの「かして」!",
+                "body": "みおちゃんは「いいよ、はい!」。もう「かして」めいじんだね。",
+                "image": "kashite-iroenpitsu-a",
+                "stamp": true,
+                "coach": null,
+                "retryLabel": "ほかの えらびかたも みてみる"
+              }
+            },
+            {
+              "type": "B",
+              "label": "みおちゃんの ふでばこから べつの みどりを とる",
+              "result": {
+                "title": "みおちゃんは かなしそう",
+                "body": "かってに ふでばこを あけられて、びっくりしたんだって。",
+                "image": "kashite-iroenpitsu-b",
+                "stamp": false,
+                "coach": "ひとの ものは、きいてから、だね",
+                "retryLabel": "もういちど やってみる"
+              }
+            },
+            {
+              "type": "C",
+              "label": "みどりを つかわずに かく",
+              "result": {
+                "title": "くふうしたね!",
+                "body": "でも ほんとうは みどりが よかったんだよね。きもちは がまんしなくて いいんだよ。",
+                "image": "kashite-iroenpitsu-c",
+                "stamp": false,
+                "coach": null,
+                "retryLabel": "「かして」を ためしてみる"
+              }
+            }
+          ],
+          "quiz": {
+            "question": "「はい!」って かしてくれた みおちゃんは、どんな きもちかな?",
+            "image": "kashite-iroenpitsu-quiz",
+            "answer": "happy",
+            "hint": null
+          }
+        }
+      ]
+    }
+  ]
+}
